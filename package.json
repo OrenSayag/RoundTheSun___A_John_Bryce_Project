@@ -2,8 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "engines:":{
-    "node":"14.x"
+  "engines:": {
+    "node": "14.x"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -11,8 +11,6 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^4.6.0",
-    "chart.js": "^3.3.2",
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",
     "google-maps-react": "^2.0.6",
@@ -28,8 +26,7 @@
     "react-scripts": "4.0.3",
     "react-scrollbars-custom": "^4.0.25",
     "react-simple-maps": "^2.3.0",
-    "victory": "^35.8.3",
-    "web-vitals": "^1.1.2"
+    "victory": "^35.8.3"
   },
   "scripts": {
     "start": "react-scripts start",

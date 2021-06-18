@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const env = require('../env')
 
 
-let con = mysql.createConnection({
+let pool = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'bc8202b70b5cc9',
   password: '4bb08b17',
@@ -15,22 +15,22 @@ let con = mysql.createConnection({
 // user = bc8202b70b5cc9
 // password = 4bb08b17
 
-con.connect(function (err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
+// con.connect(function (err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
 
-    con = reconnect(con);
+//     con = reconnect(con);
     
-    return;
-  }
+//     return;
+//   }
 
-  console.log("Connected to mysql");
-});
+//   console.log("Connected to mysql");
+// });
 
 // wrapper
 const myQuery = (q) => {
     return new Promise((resolve, reject)=>{
-        con.query(q,(err,results)=>{
+        pool.query(q,(err,results)=>{
             if(err){
                 reject(err)
             }else{

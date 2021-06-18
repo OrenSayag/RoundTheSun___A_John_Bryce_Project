@@ -51,6 +51,7 @@ function reconnect(connection){
 
   //- Try to reconnect
   connection.connect(function(err){
+    
       if(err) {
           //- Try to connect every 2 seconds.
           setTimeout(reconnect, 2000);

@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "clsx": "^1.1.1",
+    "create-react-app": "^4.0.3",
     "date-fns": "^2.22.1",
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",

@@ -1,11 +1,14 @@
 
 // connect to db
 const mysql = require("mysql");
+const env = require('../env')
+
+
 const con = mysql.createConnection({
-  host: "eu-cdbr-west-01.cleardb.com",
-  user: "bf9af5816bc5ea",
-  password: "15f70cd4",
-  database: "`heroku_a6a04c04750d755`",
+  host: process.env.host,
+  user: process.env.user,
+  password: process.env.password,
+  database: "heroku_a6a04c04750d755",
 });
 
 con.connect(function (err) {

@@ -119,7 +119,7 @@ export default function AddLocation() {
   const fetchAddLocation = async () => {
     try {
       const res = await fetch(
-        `http://localhost:666/controlPanel/manageLocations`,
+        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
         {
           method: "POST",
           body: JSON.stringify({

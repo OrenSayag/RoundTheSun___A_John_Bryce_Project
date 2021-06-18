@@ -230,7 +230,7 @@ export default function Plan() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchAllLocations = async () => {
     try {
-      const res = await fetch(`http://localhost:666/location`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/location`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -251,7 +251,7 @@ export default function Plan() {
   };
   const fetchFavLocation = async () => {
     try {
-      const res = await fetch(`http://localhost:666/location/fav`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/location/fav`, {
         method: "POST",
         body: JSON.stringify({
           id: chosenLocation.id,
@@ -274,7 +274,7 @@ export default function Plan() {
     }
   };
   const fetchVacations = async () => {
-    const res = await fetch(`http://localhost:666/location/vacationsFiltered`, {
+    const res = await fetch(`https://ancient-reef-92615.herokuapp.com/location/vacationsFiltered`, {
       method: "POST",
       body: JSON.stringify({
         id: chosenLocation.id,

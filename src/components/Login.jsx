@@ -119,7 +119,7 @@ export default function Login() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchLogin = async () => {
     try {
-      const res = await fetch(`http://localhost:666/auth/login`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/auth/login`, {
         method: "POST",
         body: JSON.stringify({
           mailOrUsername,
@@ -141,6 +141,8 @@ export default function Login() {
       if (res.status !== 200) {
         setErrorDiv(true);
       }
+
+      console.log(data)
     } catch (error) {
       // console.log(error);
     }

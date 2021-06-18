@@ -50,7 +50,7 @@ export default function ManageDiscounts() {
     // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
     const fetchDiscountVacations = async () => {
       try {
-        const res = await fetch(`http://localhost:666/controlPanel/discounts`, {
+        const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/discounts`, {
           method: "GET",
           headers: {
             "content-type": "application/json",

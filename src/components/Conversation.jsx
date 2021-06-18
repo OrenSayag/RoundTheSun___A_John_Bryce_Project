@@ -218,7 +218,7 @@ export default function Conversation({  }) {
   const fetchConversationArr = async () => {
     try {
       const res = await fetch(
-        `http://localhost:666/inbox/conversation/${user_name}`,
+        `https://ancient-reef-92615.herokuapp.com/inbox/conversation/${user_name}`,
         {
           method: "GET",
           headers: {
@@ -242,7 +242,7 @@ export default function Conversation({  }) {
   };
   const fetchReply = async () => {
     try {
-      const res = await fetch(`http://localhost:666/inbox/reply`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/inbox/reply`, {
         method: "POST",
         body: JSON.stringify({
           text: replyInput,

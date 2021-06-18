@@ -255,7 +255,7 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   const fetchAllLocations = async () => {
     try {
       const res = await fetch(
-        `http://localhost:666/controlPanel/manageLocations`,
+        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
         {
           method: "GET",
           headers: {
@@ -279,7 +279,7 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchSearchLocations = async () => {
     try {
-      const res = await fetch(`http://localhost:666/explore/search`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
         method: "POST",
         body: JSON.stringify({
           input,
@@ -299,7 +299,7 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchDelClubProduct = async () => {
     try {
-      await fetch(`http://localhost:666/controlPanel/manageClub`, {
+      await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
         method: "DELETE",
         body: JSON.stringify({
           id: clubProduct.id,
@@ -317,7 +317,7 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchEditClubProduct = async () => {
     try {
-      const res = await fetch(`http://localhost:666/controlPanel/manageClub`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
         method: "PUT",
         body: JSON.stringify({
           id: clubProduct.id,

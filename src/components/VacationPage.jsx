@@ -44,7 +44,7 @@ export default function VacationPage({userInfo}) {
   //  888          `88.    .8'  `88b    ooo   8       `888       888       888  `88b    d88'  8       `888  oo     .d8P
   // o888o           `YbodP'     `Y8bood8P'  o8o        `8      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchGetVacation = async () => {
-    const res = await fetch(`http://localhost:666/vacation`, {
+    const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
       method: "POST",
       body: JSON.stringify({
         id,

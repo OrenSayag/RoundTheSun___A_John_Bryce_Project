@@ -213,7 +213,7 @@ export default function MLUnit({ location, setUpdate, update }) {
     // console.log(country);
     try {
       const res = await fetch(
-        `http://localhost:666/controlPanel/manageLocations`,
+        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
         {
           method: "PUT",
           body: JSON.stringify({
@@ -245,7 +245,7 @@ export default function MLUnit({ location, setUpdate, update }) {
   const fetchDelLocation = async () => {
     try {
       const res = await fetch(
-        `http://localhost:666/controlPanel/manageLocations`,
+        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
         {
           method: "DELETE",
           body: JSON.stringify({
@@ -270,7 +270,7 @@ export default function MLUnit({ location, setUpdate, update }) {
   const fetchFavLocation = async () => {
     try {
       const res = await fetch(
-        `http://localhost:666/location/fav`,
+        `https://ancient-reef-92615.herokuapp.com/location/fav`,
         {
           method: "POST",
           body: JSON.stringify({

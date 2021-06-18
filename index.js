@@ -42,8 +42,8 @@ const verifyAdmin = (req,res,next) => {
 //  8  `888'   888   888   888      888  888      888  888          888    "        `888.8'  `888.8'       .88ooo8888.    888`88b.     888    "    
 //  8    Y     888   888   888     d88'  888     d88'  888       o  888       o      `888'    `888'       .8'     `888.   888  `88b.   888       o 
 // o8o        o888o o888o o888bood8P'   o888bood8P'   o888ooooood8 o888ooooood8       `8'      `8'       o88o     o8888o o888o  o888o o888ooooood8 
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 
 
 

@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const env = require('../env')
 
 
-const con = mysql.createConnection({
+let con = mysql.createConnection({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'bc8202b70b5cc9',
   password: '4bb08b17',
@@ -18,6 +18,8 @@ const con = mysql.createConnection({
 con.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
+
+    con = reconnect(con);
     
     return;
   }
@@ -38,6 +40,26 @@ const myQuery = (q) => {
     })
 }
 
+function reconnect(connection){
+  console.log("\n New connection tentative...");
+
+  //- Destroy the current connection variable
+  if(connection) connection.destroy();
+
+  //- Create a new one
+  var connection = mysql_npm.createConnection(db_config);
+
+  //- Try to reconnect
+  connection.connect(function(err){
+      if(err) {
+          //- Try to connect every 2 seconds.
+          setTimeout(reconnect, 2000);
+      }else {
+          console.log("\n\t *** New connection established with the database. ***")
+          return connection;
+      }
+  });
+}
 
 
 // EXPORT

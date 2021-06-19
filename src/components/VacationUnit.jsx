@@ -1031,7 +1031,7 @@ const [description, setDescription] = useState('')
             <div className={clsx(classes.commentUnit)}>
               <div className={clsx(classes.commentUnitPicCont)}>
                 {/* <img src={userInfo.user_info.userInfo.img_src || 'https://www.pngix.com/pngfile/big/270-2709413_default-avatar-profile-picture-placeholder-round-hd-png.png'} */}
-                <img src={(comment.user_id===userInfo.user_info.userInfo.id && userInfo.user_info.userInfo.type!=='admin') ? memberPic : ((userInfo.user_info.userInfo.type==='admin' || comment.user_id===1) ? adminProfilePic : randomProfilePic())}
+                <img src={(comment.user_id===userInfo.user_info.userInfo.id && userInfo.user_info.userInfo.type!=='admin') ? memberPic : ((userInfo.user_info.userInfo.type==='admin' && comment.user_id===1) ? adminProfilePic : randomProfilePic())}
                 alt="Profile Pic" />
               </div>
               <div className={clsx(classes.commentUnitContentCont)}>

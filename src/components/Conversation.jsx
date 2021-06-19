@@ -231,13 +231,13 @@ export default function Conversation({  }) {
       const data = await res.json();
 
       if (res.status !== 200) {
-        // console.log(data.fail);
+        console.log(data.fail);
       }
 
       setConversationArr(data.conversation);
       setUserId(data.conversartionUserInfo);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   };
   const fetchReply = async () => {
@@ -256,12 +256,12 @@ export default function Conversation({  }) {
 
       if (res.status !== 200) {
         const data = await res.json();
-        // console.log(data.fail);
+        console.log(data.fail);
       }
 
       setUpdate(!update);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   };
   const isToday = (someDate) => {
@@ -282,6 +282,7 @@ export default function Conversation({  }) {
   const [replyInput, setReplyInput] = useState("");
   const [conversationArr, setConversationArr] = useState([]);
   const [conversartionUserInfo, setUserId] = useState(0);
+  const [profilePic, setProfilePic] = useState("")
   // ooooo   ooooo   .oooooo.     .oooooo.   oooo    oooo  .oooooo..o
   // `888'   `888'  d8P'  `Y8b   d8P'  `Y8b  `888   .8P'  d8P'    `Y8
   //  888     888  888      888 888      888  888  d8'    Y88bo.
@@ -304,7 +305,8 @@ export default function Conversation({  }) {
   // o888ooooood8 o888o        o888o        o888ooooood8  `Y8bood8P'      o888o
   useEffect(() => {
     // fetchConversations();
-    // fetchConversationArr();
+    fetchConversationArr();
+    setProfilePic(randomProfilePic())
   }, [update]);
 
   //   oooo  .oooooo..o ooooooo  ooooo
@@ -337,9 +339,9 @@ export default function Conversation({  }) {
               <div className={clsx(classes.messageRoot)}>
                 <div className={clsx(classes.messageImgCont)}>
                   <img
-                    src={message.type === "touser" ? (adminProfilePic) : randomProfilePic}
-
-                  // src={"https://randomuser.me/api/portraits/men/80.jpg"}
+                    src={message.type === "touser" ? (adminProfilePic) : ( conversartionUserInfo.img_src ||
+                      profilePic)}
+                  // src={"https://randomuser.me/api/portraits/women/53.jpg"}
                     // src="/profilePics/member2.jpg"
                     alt="profile pic"
                   />

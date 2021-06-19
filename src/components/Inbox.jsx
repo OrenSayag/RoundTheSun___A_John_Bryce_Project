@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme=>({
     padding: "10px 30px",
     // border: '1px solid white',
     minHeight: "calc(100vh - 90px)",
-
+    
   },
   conversationUnit: {
     // border: '1px solid pink',
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme=>({
     boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
     gridTemplateRows: "50% auto",
     margin: "20px 0",
-    height: "150px",
+    height: "200px",
     borderRadius: 3,
     backgroundColor: "rgba(255,255,255,.2)",
     "&>*": {
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme=>({
       // border: '1px solid red',
       // padding: '5px',
       display: "grid",
-      gridTemplateColumns: "10% auto",
+      gridTemplateColumns: "35% auto",
       
       "&>*": {
         // border: '1px solid blue',
@@ -52,22 +52,23 @@ const useStyles = makeStyles(theme=>({
         justifyContent: "center",
         [theme.breakpoints.down('sm')]: {
           alignItems: 'center',
-    
+          
         },
       },
       "&>:last-child": {
         display: "flex",
         alignItems: "center",
-     
+        
       },
       [theme.breakpoints.down('sm')]: {
-        gridTemplateColumns: "20% auto",
+        gridTemplateColumns: "35% auto",
         
-  
+        
       },
     },
     "&>:last-child": {
       padding: "10px",
+      // border: '1px solid blue',
       display: "grid",
       gridTemplateColumns: "10% auto",
       "&>:last-child": {
@@ -86,11 +87,11 @@ const useStyles = makeStyles(theme=>({
   },
   img: {
     borderRadius: "50%",
-    width: "60px",
-    height: "60px",
+    maxWidth: "60px",
+    maxHeight: "60px",
     [theme.breakpoints.down('sm')]: {
-      width: "30px",
-      height: "30px",
+      maxWidth: "30px",
+      maxHeight: "30px",
       
 
     },

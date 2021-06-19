@@ -30,4 +30,6 @@ const  randomProfilePic = ()=>{
     return profilePicLinks[Math.floor(Math.random()*profilePicLinks.length)]
 }
 
+// console.log(randomProfilePic())
+
 export default randomProfilePic

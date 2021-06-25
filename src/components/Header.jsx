@@ -394,7 +394,7 @@ export default function Header() {
                 <span className={clsx(classes.phoneKiller)}>{'Hello, \xa0'}</span>
                 <Link className={clsx(classes.menuLink, classes.hoverLink, (location.pathname.split('/')[1] == 'profile' && classes.hoverLinkProfilePhone))} to={`/profile/${userInfo.user_info.userInfo.user_name}`}>
                   {userInfo.user_info.userInfo.user_name}
-                  {console.log(window.innerWidth)}
+                  {/* {console.log(window.innerWidth)} */}
                 </Link>
                 <img
                   // src={userInfo.user_info.userInfo.img_src}
@@ -421,16 +421,16 @@ export default function Header() {
                {userInfo && userInfo.user_info && userInfo.user_info.userInfo.type!=='admin' && <Link 
                 onClick={()=>setBurger(false)}
                 className={clsx(classes.menuLink, classes.firstBurgerLink, classes.hoverLink)}
-                to='/contactUs'>{burger && 'Contact Us'}</Link>}
+                to='/contactUs'>{burger && 'Chat With Us'}</Link>}
                 <Link 
                 onClick={()=>setBurger(false)}
                 className={clsx(classes.menuLink, classes.hoverLink)}
                 to='/blog'>{burger && 'Blog'}</Link>
                 {/* <Link to='/FriendsTell'>Friends Tell</Link> */}
-                <Link
+                <div
                 className={clsx(classes.logout, classes.menuLink, classes.hoverLink)}
                 onClick={()=>logout()}
-                >{burger && 'Logout'}</Link>
+                >{burger && 'Logout'}</div>
             </div>}
         </div>
       )}

@@ -118,7 +118,8 @@ export default function AddClubProduct() {
     }
 
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      const res = await fetch(`http://localhost:666/controlPanel/manageClub`, {
         method: "POST",
         body: JSON.stringify({
           name,
@@ -157,7 +158,8 @@ export default function AddClubProduct() {
   const fetchAllLocations = async () => {
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        // `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        `http://localhost:666/controlPanel/manageLocations`,
         {
           method: "GET",
           headers: {
@@ -261,7 +263,7 @@ export default function AddClubProduct() {
           <option value="">Choose a location</option>
           {allLocations &&
             allLocations.map((location) => (
-              <option value={+location.id}>
+              <option key={location.id} value={+location.id}>
                 {location.name + "," + location.country}
               </option>
             ))}

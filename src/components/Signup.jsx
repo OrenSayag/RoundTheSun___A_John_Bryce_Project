@@ -135,7 +135,8 @@ export default function Signup() {
             return 1
         }
         try {
-            const res = await fetch(`https://ancient-reef-92615.herokuapp.com/auth/signup`,{
+            // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/auth/signup`,{
+            const res = await fetch(`http://localhost:666/auth/signup`,{
                 method: 'POST',
                 body:JSON.stringify({
                     userName, password, firstName, lastName, mail

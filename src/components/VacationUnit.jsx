@@ -397,7 +397,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchFollowVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/follow`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/follow`, {
+      const res = await fetch(`http://localhost:666/vacation/follow`, {
         method: "PUT",
         body: JSON.stringify({
           id,
@@ -415,7 +416,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchLikeVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/like`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/like`, {
+      const res = await fetch(`http://localhost:666/vacation/like`, {
         method: "PUT",
         body: JSON.stringify({
           id,
@@ -433,7 +435,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchCommentVacation = async (id, text) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      const res = await fetch(`http://localhost:666/vacation/comment`, {
         method: "POST",
         body: JSON.stringify({
           id,
@@ -460,7 +463,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchDelCommentVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      const res = await fetch(`http://localhost:666/vacation/comment`, {
         method: "DELETE",
         body: JSON.stringify({
           id,
@@ -486,7 +490,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchDelVacation = async (id) => {
     try {
-      await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+      // await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+      await fetch(`http://localhost:666/vacation`, {
         method: "DELETE",
         body: JSON.stringify({
           id,
@@ -504,7 +509,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchEditVacation = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/`, {
+      const res = await fetch(`http://localhost:666/vacation/`, {
         method: "PUT",
         body: JSON.stringify({
           id: vacation.id,
@@ -539,7 +545,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchSearchLocations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      const res = await fetch(`http://localhost:666/explore/search`, {
         method: "POST",
         body: JSON.stringify({
           input,
@@ -710,7 +717,7 @@ const [description, setDescription] = useState('')
           {locationsSearchResults && (!chosenResultEditLocation ? (
               locationsSearchResults.map((location) => (
                 <div
-                  
+                  key={location.id}
                   onClick={() => {
                     setChosenResultEditLocation(true);
                     setChosenResultEditLocationText(
@@ -959,7 +966,7 @@ const [description, setDescription] = useState('')
 
       <div className={clsx(classes.info)}>
         <div>{vacation.follows && numberWithCommas(vacation.follows.length)} Followers</div>
-        <div classeName={clsx(classes.flexAling)}>{vacation.likes && numberWithCommas(vacation.likes.length)} Likes</div>
+        <div className={clsx(classes.flexAling)}>{vacation.likes && numberWithCommas(vacation.likes.length)} Likes</div>
         <div>{vacation.comments && numberWithCommas(vacation.comments.length)} Comments</div>
       </div>
       </div>
@@ -1028,7 +1035,7 @@ const [description, setDescription] = useState('')
 
 
 
-            <div className={clsx(classes.commentUnit)}>
+            <div key={comment.id} className={clsx(classes.commentUnit)}>
               <div className={clsx(classes.commentUnitPicCont)}>
                 {/* <img src={userInfo.user_info.userInfo.img_src || 'https://www.pngix.com/pngfile/big/270-2709413_default-avatar-profile-picture-placeholder-round-hd-png.png'} */}
                 <img src={(comment.user_id===userInfo.user_info.userInfo.id && userInfo.user_info.userInfo.type!=='admin') ? memberPic : ((userInfo.user_info.userInfo.type==='admin' && comment.user_id===1) ? adminProfilePic : randomProfilePic())}

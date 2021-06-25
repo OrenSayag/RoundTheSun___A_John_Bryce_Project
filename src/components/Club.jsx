@@ -180,7 +180,8 @@ export default function Club() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchClubProds = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/creditProds`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/creditProds`, {
+      const res = await fetch(`http://localhost:666/club/creditProds`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -200,7 +201,8 @@ export default function Club() {
   };
   const fetchUserCredits = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      const res = await fetch(`http://localhost:666/club/userCredits`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -344,7 +346,7 @@ export default function Club() {
                     >Club Products</div> */}
             {userCreditsDisplayDiv()}
             {clubProds.map((clubProduct) => (
-              <Grid  item xs={12} sm={12} >
+              <Grid key={clubProduct.id}  item xs={12} sm={12} >
                 <div className={clsx(classes.unitCont)}>
                 <MCUnit
                   display={true}

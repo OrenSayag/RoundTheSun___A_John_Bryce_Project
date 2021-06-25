@@ -39,6 +39,7 @@ const useStyles = makeStyles({
     // position: 'relative',
     width: '100%',
     overflowX: 'hidden',
+    minHeight: "100vh"
   },
   cont:{
     // width: '100%',

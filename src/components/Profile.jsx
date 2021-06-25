@@ -275,7 +275,8 @@ export default function Profile() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchProfileData = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/profile`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/profile`, {
+      const res = await fetch(`http://localhost:666/profile`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -300,7 +301,8 @@ export default function Profile() {
   };
   const fetchUserCredits = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      const res = await fetch(`http://localhost:666/club/userCredits`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -408,7 +410,7 @@ export default function Profile() {
                 <div>Purchased On</div>
               </div>
               {purchaseHistory.map((purchase) => (
-                <div className={clsx(classes.purchase)}>
+                <div key={purchase.id} className={clsx(classes.purchase)}>
                   <div>
                     {purchase.vacation_name || purchase.club_product_name} ({purchase.location_name} ,{purchase.country})
                   </div>
@@ -454,7 +456,7 @@ export default function Profile() {
           {upcomingVacations.length > 0 ? (
             <div>
               {upcomingVacations.map((vacation) => (
-                <div className={clsx(classes.upcomingVacation)}>
+                <div key={vacation.id} className={clsx(classes.upcomingVacation)}>
                   {/* {console.log(vacation)} */}
                   <div
                     className={clsx(classes.link)}
@@ -513,6 +515,7 @@ export default function Profile() {
               </div>
             {income.map((vacation) => (
               <div
+              key={vacation.id}
               className={clsx(classes.purchase)}
               >
                 <div

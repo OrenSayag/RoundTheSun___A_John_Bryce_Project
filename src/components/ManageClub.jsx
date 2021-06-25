@@ -81,7 +81,8 @@ export default function ManageClub() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchClubProducts = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      const res = await fetch(`http://localhost:666/controlPanel/manageClub`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -158,7 +159,7 @@ export default function ManageClub() {
       }}
       >Add a club product</button>
         </div>
-          {clubProducts.map(clubProduct=><MCUnit clubProduct={clubProduct} update={update} setUpdate={setUpdate}/>)}
+          {clubProducts.map(clubProduct=><MCUnit key={clubProduct.id} clubProduct={clubProduct} update={update} setUpdate={setUpdate}/>)}
         
       </div>
   </div>);

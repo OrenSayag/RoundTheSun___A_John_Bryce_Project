@@ -146,7 +146,8 @@ export default function Explore() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchSearchExplore = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      const res = await fetch(`http://localhost:666/explore/search`, {
         method: "POST",
         body: JSON.stringify({
           input,
@@ -167,7 +168,8 @@ export default function Explore() {
   };
   const fetchVacations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
+      const res = await fetch(`http://localhost:666/explore`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -175,7 +177,6 @@ export default function Explore() {
         },
       });
       const data = await res.json();
-      // console.log(data);
 
       if (res.status !== 200) {
         return 1;
@@ -276,7 +277,9 @@ export default function Explore() {
           <div>
             {locationsSearchResults &&
               locationsSearchResults.map((location) => (
-                <div>
+                <div
+                key={location.id}
+                >
                   <div
                     className={clsx(classes.searchRes)}
                     onClick={() => {
@@ -292,7 +295,9 @@ export default function Explore() {
           <div>
             {vacationsSearchResults &&
               vacationsSearchResults.map((vacation) => (
-                <div>
+                <div
+                key={vacation.id}
+                >
                   <div
                     className={clsx(classes.searchRes)}
                     onClick={() => {
@@ -321,6 +326,7 @@ export default function Explore() {
               {followedVacations &&
                 followedVacations.map((vacation) => (
                   <VacationUnit
+                  key={vacation.id}
                     vacation={vacation}
                     setUpdate={setUpdate}
                     update={update}
@@ -334,6 +340,7 @@ export default function Explore() {
               {restOfVacations &&
                 restOfVacations.map((vacation) => (
                   <VacationUnit
+                  key={vacation.id}
                     vacation={vacation}
                     setUpdate={setUpdate}
                     update={update}
@@ -349,6 +356,7 @@ export default function Explore() {
             {restOfVacations &&
               restOfVacations.map((vacation) => (
                 <VacationUnit
+                key={vacation.id}
                   vacation={vacation}
                   setUpdate={setUpdate}
                   update={update}

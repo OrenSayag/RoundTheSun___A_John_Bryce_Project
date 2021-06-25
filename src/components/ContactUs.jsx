@@ -230,7 +230,8 @@ export default function ContactUs() {
   //  888          `88.    .8'   8       `888  `88b    ooo       888       888  `88b    d88'  8       `888  oo     .d8P
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchSendMessage = async () => {
-    const res = await fetch("https://ancient-reef-92615.herokuapp.com/inbox/message", {
+    // const res = await fetch("https://ancient-reef-92615.herokuapp.com/inbox/message", {
+    const res = await fetch("http://localhost:666/inbox/message", {
       method: "POST",
       body: JSON.stringify({
         text: textInput,
@@ -248,7 +249,8 @@ export default function ContactUs() {
     setUpdate(!update);
   };
   const fetchConversation = async () => {
-    const res = await fetch("https://ancient-reef-92615.herokuapp.com/inbox/user/conversation", {
+    // const res = await fetch("https://ancient-reef-92615.herokuapp.com/inbox/user/conversation", {
+    const res = await fetch("http://localhost:666/inbox/user/conversation", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -348,7 +350,7 @@ export default function ContactUs() {
     {userInfo.user_info.userInfo.type==='admin'&&history.push('/explore')}  
       <div className={clsx(classes.root)}>
         <div className={clsx(classes.pageHeader)}>
-          <div className={clsx(classes.pageHeaderTitle)}>Contact Us</div>
+          <div className={clsx(classes.pageHeaderTitle)}>Chat With Us</div>
           <div className={clsx(classes.pageHeaderBlah)}>
             Send us a message and we will reply shortly
           </div>
@@ -358,6 +360,7 @@ export default function ContactUs() {
             {conversation.map((message) => (
               
               <div
+              key={message.id}
                 className={clsx(classes.messageCont, message.type==='touser' ? classes.toUser : classes.fromUser)}
               >
                 <div

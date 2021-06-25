@@ -50,7 +50,8 @@ export default function ManageDiscounts() {
     // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
     const fetchDiscountVacations = async () => {
       try {
-        const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/discounts`, {
+        // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/discounts`, {
+        const res = await fetch(`http://localhost:666/controlPanel/discounts`, {
           method: "GET",
           headers: {
             "content-type": "application/json",
@@ -113,7 +114,7 @@ export default function ManageDiscounts() {
         <div className={clsx(classes.cont)}>
           <div className={clsx(classes.root)}>
             <div>
-                {discountVacations.length>0 ?discountVacations.map(vacation=><VacationUnit setUpdate={setUpdate} update={update} vacation={vacation}/>)
+                {discountVacations.length>0 ?discountVacations.map(vacation=><VacationUnit key={vacation.id} setUpdate={setUpdate} update={update} vacation={vacation}/>)
             : <div>No discounts. Add some at explore page, editing a vacation!</div>    
             }
             </div>

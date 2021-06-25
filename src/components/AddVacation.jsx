@@ -125,7 +125,8 @@ export default function AddVacation() {
         }
 
         try {
-            const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/add`,{
+            // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/add`,{
+            const res = await fetch(`http://localhost:666/explore/add`,{
                 method: 'POST',
                 body:JSON.stringify({
                     name, price, discount, description,start_date, end_date, credits,
@@ -158,7 +159,8 @@ export default function AddVacation() {
     }
     const fetchAllLocations = async () =>{
         try {
-            const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,{
+            // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,{
+            const res = await fetch(`http://localhost:666/controlPanel/manageLocations`,{
                 method: 'GET',
                 headers:{
                     'content-type':'application/json',
@@ -272,7 +274,7 @@ export default function AddVacation() {
             >   
                 <option value="">Choose a location</option>
                 {allLocations && allLocations.map(location=>(
-                    <option value={+location.id}>{location.name+','+location.country}</option>
+                    <option key={location.id} value={+location.id}>{location.name+','+location.country}</option>
                 ))}
             </select>
             <input type="text" placeholder="Enter img_src" 

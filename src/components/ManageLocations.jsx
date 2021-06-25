@@ -78,7 +78,8 @@ export default function ManageLocations() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchLocations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`, {
+      const res = await fetch(`http://localhost:666/controlPanel/manageLocations`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -155,7 +156,7 @@ export default function ManageLocations() {
         >Add Location</button>
 
       </div>
-        {locationsArr.map(location=><div className={clsx(classes.unitCont)}><MLUnit location={location} update={update} setUpdate={setUpdate} /></div>)}
+        {locationsArr.map(location=><div key={location.id} className={clsx(classes.unitCont)}><MLUnit location={location} update={update} setUpdate={setUpdate} /></div>)}
     </div>
   );
 }

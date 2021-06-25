@@ -70,6 +70,7 @@ class PlanMap extends Component {
           defaultZoom={  0}
         >
           {this.props.locationsArr.map(location=><PlanMarker
+          key={location.id}
             lat={location.x}
             lng={location.y}
             name="My Marker"

@@ -74,7 +74,8 @@ export default function FavoriteLocations() {
   const fetchFavLocations = async () => {
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/profile/favLocations`,
+        // `https://ancient-reef-92615.herokuapp.com/profile/favLocations`,
+        `http://localhost:666/profile/favLocations`,
         {
           method: "GET",
           headers: {
@@ -154,7 +155,7 @@ export default function FavoriteLocations() {
         No favorite locations yet!
       </div>
       }
-      {favLocations.map(location=><MLUnit location={location} update={update} setUpdate={setUpdate}/>)}
+      {favLocations.map(location=><MLUnit key={location.id} location={location} update={update} setUpdate={setUpdate}/>)}
       </div>
   </div>;
 }

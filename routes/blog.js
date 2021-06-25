@@ -152,7 +152,7 @@ router.get('/' ,async (req, res) => {
         ORDER BY date DESC
         `)
         if(allPosts.length===0){
-            return res.status(400).send({fail:"no such post"})
+            return res.status(400).send({fail:"no posts"})
         }
         return res.status(200).send({allPosts})
     } catch (error) {

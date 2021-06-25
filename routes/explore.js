@@ -144,10 +144,11 @@ router.get("/", verifyUser, async (req, res) => {
             INNER JOIN users
             ON vacation_comments.user_id = users.id
             WHERE vacation_id=${vacation.id}
+            ORDER BY vacation_comments.date ASC
             `);
       vacation.likes = likes;
       vacation.follows = follows;
-      vacation.comments = comments;
+      vacation.comments = comments.sort;
     }
     const restOfVactions = await myQuery(`
         SELECT vacations.*, locations.country ,locations.name AS location_name FROM vacations 
@@ -173,6 +174,7 @@ router.get("/", verifyUser, async (req, res) => {
             INNER JOIN users
             ON vacation_comments.user_id = users.id
             WHERE vacation_id=${vacation.id}
+            ORDER BY vacation_comments.date ASC
                   `);
             vacation.likes = likes;
             vacation.follows = follows;

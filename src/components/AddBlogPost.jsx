@@ -190,8 +190,8 @@ export default function AddBlogPost() {
   //  888          `88.    .8'   8       `888  `88b    ooo       888       888  `88b    d88'  8       `888  oo     .d8P
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchAddPost = async () => {
-    // const res = await fetch("https://ancient-reef-92615.herokuapp.com/blog/post", {
-    const res = await fetch("http://localhost:666/blog/post", {
+    const res = await fetch("https://ancient-reef-92615.herokuapp.com/blog/post", {
+    // const res = await fetch("http://localhost:666/blog/post", {
       method: "POST",
       body:JSON.stringify({
         title:titleInput,

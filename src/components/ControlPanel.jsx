@@ -98,8 +98,8 @@ export default function ControlPanel() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchSearchExplore = async () => {
     try {
-      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
-      const res = await fetch(`http://localhost:666/explore/search`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      // const res = await fetch(`http://localhost:666/explore/search`, {
         method: "POST",
         body: JSON.stringify({
         //   input,
@@ -118,8 +118,8 @@ export default function ControlPanel() {
   };
   const fetchVacations = async () => {
     try {
-      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
-      const res = await fetch(`http://localhost:666/explore`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
+      // const res = await fetch(`http://localhost:666/explore`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

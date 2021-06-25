@@ -112,8 +112,8 @@ export default function Inbox() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchConversations = async () => {
     try {
-      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/inbox`, {
-      const res = await fetch(`http://localhost:666/inbox`, {
+      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/inbox`, {
+      // const res = await fetch(`http://localhost:666/inbox`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

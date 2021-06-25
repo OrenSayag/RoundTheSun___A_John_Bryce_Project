@@ -125,8 +125,8 @@ export default function AddVacation() {
         }
 
         try {
-            // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/add`,{
-            const res = await fetch(`http://localhost:666/explore/add`,{
+            const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/add`,{
+            // const res = await fetch(`http://localhost:666/explore/add`,{
                 method: 'POST',
                 body:JSON.stringify({
                     name, price, discount, description,start_date, end_date, credits,
@@ -159,8 +159,8 @@ export default function AddVacation() {
     }
     const fetchAllLocations = async () =>{
         try {
-            // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,{
-            const res = await fetch(`http://localhost:666/controlPanel/manageLocations`,{
+            const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,{
+            // const res = await fetch(`http://localhost:666/controlPanel/manageLocations`,{
                 method: 'GET',
                 headers:{
                     'content-type':'application/json',

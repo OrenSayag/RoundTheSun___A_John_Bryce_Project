@@ -74,8 +74,8 @@ export default function FavoriteLocations() {
   const fetchFavLocations = async () => {
     try {
       const res = await fetch(
-        // `https://ancient-reef-92615.herokuapp.com/profile/favLocations`,
-        `http://localhost:666/profile/favLocations`,
+        `https://ancient-reef-92615.herokuapp.com/profile/favLocations`,
+        // `http://localhost:666/profile/favLocations`,
         {
           method: "GET",
           headers: {

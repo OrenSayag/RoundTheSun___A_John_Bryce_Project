@@ -148,7 +148,7 @@ router.get("/", verifyUser, async (req, res) => {
             `);
       vacation.likes = likes;
       vacation.follows = follows;
-      vacation.comments = comments.sort;
+      vacation.comments = comments;
     }
     const restOfVactions = await myQuery(`
         SELECT vacations.*, locations.country ,locations.name AS location_name FROM vacations 

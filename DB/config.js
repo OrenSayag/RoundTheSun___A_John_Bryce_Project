@@ -5,14 +5,14 @@ const env = require('../env')
 
 
 let pool = mysql.createPool({
-//   host: 'us-cdbr-east-04.cleardb.com',
-//   user: 'bc8202b70b5cc9',
-//   password: '4bb08b17',
-//   database: "heroku_60bc19962800d65",
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: "orensayag_project3_initial",
+  host: 'us-cdbr-east-04.cleardb.com',
+  user: 'bc8202b70b5cc9',
+  password: '4bb08b17',
+  database: "heroku_60bc19962800d65",
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: "orensayag_project3_initial",
 });
 
 // host = us-cdbr-east-04.cleardb.com

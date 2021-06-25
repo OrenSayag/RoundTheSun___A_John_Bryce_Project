@@ -159,7 +159,7 @@ INSERT INTO users(user_name, hashed_pass, type, img_src)
 VALUES ('admin', '$2b$10$CpU50cJwUxIotv9yODBiV.yGC6ahnotEdA0bTBk8pajtltXYo6Tu2', 'admin', 'https://randomuser.me/api/portraits/men/49.jpg')
 
 -- FOR YOSI: admin pass: 12345678Aa
-
+-- CHECK OUT ON HEROKU: once-more-round-the-sun.herokuapp.com
 
 
 

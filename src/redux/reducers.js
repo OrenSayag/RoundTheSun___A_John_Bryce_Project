@@ -10,7 +10,7 @@ export const userInfoReducer = (state = {}, action)=>{
           return {...state, user_info:'failed'}
         }
         const payLoad = jwtDecode(localStorage.token)
-        if(!payload){
+        if(!payLoad){
           return {...state, user_info:'failed'}
         }
         if(!payLoad.exp){

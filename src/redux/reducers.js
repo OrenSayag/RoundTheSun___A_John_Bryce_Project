@@ -10,16 +10,15 @@ export const userInfoReducer = (state = {}, action)=>{
           return {...state, user_info:'failed'}
         }
         const payLoad = jwtDecode(localStorage.token)
-        if(!payLoad.exp){
-        }
-        // console.log(+payLoad.exp)
-        // console.log(+(Date.now()/1000).toString().split('.')[0])
-        // console.log('REDUX')
-        if(+payLoad.exp<+(Date.now()/1000).toString().split('.')[0]){
-          // console.log('token expired DEV')
+        if(!payload){
           return {...state, user_info:'failed'}
         }
-        // console.log(('good token'))
+        if(!payLoad.exp){
+          return {...state, user_info:'failed'}
+        }
+        if(+payLoad.exp<+(Date.now()/1000).toString().split('.')[0]){
+          return {...state, user_info:'failed'}
+        }
         return {...state, user_info:payLoad}
   
       default:

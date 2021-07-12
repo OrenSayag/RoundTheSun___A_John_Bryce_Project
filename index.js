@@ -55,29 +55,31 @@ app.use(express.json())
 //  888  `88b.  `88b    d88'  `88.    .8'       888       888       o oo     .d8P 
 // o888o  o888o  `Y8bood8P'     `YbodP'        o888o     o888ooooood8 8""88888P'                                           
 // app.get('/', function (req, res) {
-//     res.send('Hello World')
-// })
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/profile', verifyUser ,require('./routes/profile'))
-app.use('/api/controlPanel', verifyAdmin, require('./routes/controlPanel'))
-app.use('/api/inbox', require('./routes/inbox'))
-app.use('/api/explore', require('./routes/explore'))
-app.use('/api/location', verifyUser ,require('./routes/location'))
-app.use('/api/vacation', verifyUser ,require('./routes/vacation'))
-app.use('/api/club', verifyUser ,require('./routes/club'))
-app.use('/api/pay', verifyUser ,require('./routes/pay'))
-app.use('/api/blog' ,require('./routes/blog'))
-app.get('/api/newToken', verifyUser, (req, res)=>{
-    const userInfo = req.userInfo
-    res.status(200).send({userInfo})
-})
-
-//define static folder
-app.use("/", express.static("build"))
-
-app.get("/*", (req, res)=>{
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+    //     res.send('Hello World')
+    // })
+    app.use('/api/auth', require('./routes/auth'))
+    app.use('/api/profile', verifyUser ,require('./routes/profile'))
+    app.use('/api/controlPanel', verifyAdmin, require('./routes/controlPanel'))
+    app.use('/api/inbox', require('./routes/inbox'))
+    app.use('/api/explore', require('./routes/explore'))
+    app.use('/api/location', verifyUser ,require('./routes/location'))
+    app.use('/api/vacation', verifyUser ,require('./routes/vacation'))
+    app.use('/api/club', verifyUser ,require('./routes/club'))
+    app.use('/api/pay', verifyUser ,require('./routes/pay'))
+    app.use('/api/blog' ,require('./routes/blog'))
+    app.get('/api/newToken', verifyUser, (req, res)=>{
+        const userInfo = req.userInfo
+        res.status(200).send({userInfo})
+    })
+    
+    //define static folder
+    app.use("/", express.static(__dirname + "/build"))
+    // console.log(path.join(__dirname, 'build', 'index.html'))
+    
+    app.get("/*", (req, res)=>{
+        // res.sendFile(path.join(__dirname, 'build', 'index.html'))
+        res.sendFile(__dirname + '/build' + '/index.html')
+    })
  
 app.listen(port, (err)=>{
     if(err){console.log(err)}

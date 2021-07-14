@@ -275,7 +275,8 @@ export default function Profile() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchProfileData = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/profile`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/profile`, {
+      const res = await fetch(`/api/profile`, {
       // const res = await fetch(`http://localhost:666/profile`, {
         method: "GET",
         headers: {
@@ -301,7 +302,8 @@ export default function Profile() {
   };
   const fetchUserCredits = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/userCredits`, {
+      const res = await fetch(`/api/club/userCredits`, {
       // const res = await fetch(`http://localhost:666/club/userCredits`, {
         method: "GET",
         headers: {

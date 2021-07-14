@@ -397,7 +397,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchFollowVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/follow`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/follow`, {
+      const res = await fetch(`/api/vacation/follow`, {
       // const res = await fetch(`http://localhost:666/vacation/follow`, {
         method: "PUT",
         body: JSON.stringify({
@@ -416,7 +417,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchLikeVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/like`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/like`, {
+      const res = await fetch(`/api/vacation/like`, {
       // const res = await fetch(`http://localhost:666/vacation/like`, {
         method: "PUT",
         body: JSON.stringify({
@@ -435,7 +437,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchCommentVacation = async (id, text) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      const res = await fetch(`/api/vacation/comment`, {
       // const res = await fetch(`http://localhost:666/vacation/comment`, {
         method: "POST",
         body: JSON.stringify({
@@ -463,7 +466,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchDelCommentVacation = async (id) => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/comment`, {
+      const res = await fetch(`/api/vacation/comment`, {
       // const res = await fetch(`http://localhost:666/vacation/comment`, {
         method: "DELETE",
         body: JSON.stringify({
@@ -490,7 +494,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchDelVacation = async (id) => {
     try {
-      await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+      // await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+      await fetch(`/api/vacation`, {
       // await fetch(`http://localhost:666/vacation`, {
         method: "DELETE",
         body: JSON.stringify({
@@ -509,7 +514,9 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchEditVacation = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation/`, {
+      const res = await fetch(`/api/vacation/`, {
       // const res = await fetch(`http://localhost:666/vacation/`, {
         method: "PUT",
         body: JSON.stringify({
@@ -545,7 +552,8 @@ export default function VacationUnit({ vacation, setUpdate, update }) {
   };
   const fetchSearchLocations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      const res = await fetch(`/api/explore/search`, {
       // const res = await fetch(`http://localhost:666/explore/search`, {
         method: "POST",
         body: JSON.stringify({

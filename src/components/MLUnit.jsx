@@ -213,7 +213,8 @@ export default function MLUnit({ location, setUpdate, update }) {
     // console.log(country);
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        // `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        `/api/controlPanel/manageLocations`,
         // `http://localhost:666/controlPanel/manageLocations`,
         {
           method: "PUT",
@@ -246,7 +247,8 @@ export default function MLUnit({ location, setUpdate, update }) {
   const fetchDelLocation = async () => {
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        // `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        `/api/controlPanel/manageLocations`,
         // `http://localhost:666/controlPanel/manageLocations`,
         {
           method: "DELETE",
@@ -272,7 +274,8 @@ export default function MLUnit({ location, setUpdate, update }) {
   const fetchFavLocation = async () => {
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/location/fav`,
+        // `https://ancient-reef-92615.herokuapp.com/location/fav`,
+        `/api/location/fav`,
         // `http://localhost:666/location/fav`,
         {
           method: "POST",

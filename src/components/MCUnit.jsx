@@ -255,7 +255,8 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   const fetchAllLocations = async () => {
     try {
       const res = await fetch(
-        `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        // `https://ancient-reef-92615.herokuapp.com/controlPanel/manageLocations`,
+        `/api/controlPanel/manageLocations`,
         // `http://localhost:666/controlPanel/manageLocations`,
         {
           method: "GET",
@@ -280,7 +281,8 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchSearchLocations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore/search`, {
+      const res = await fetch(`/api/explore/search`, {
       // const res = await fetch(`http://localhost:666/explore/search`, {
         method: "POST",
         body: JSON.stringify({
@@ -301,7 +303,8 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchDelClubProduct = async () => {
     try {
-      await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      // await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      await fetch(`/api/controlPanel/manageClub`, {
       // await fetch(`http://localhost:666/controlPanel/manageClub`, {
         method: "DELETE",
         body: JSON.stringify({
@@ -320,7 +323,8 @@ export default function MCUnit({ clubProduct, update, setUpdate, display }) {
   };
   const fetchEditClubProduct = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/manageClub`, {
+      const res = await fetch(`/api/controlPanel/manageClub`, {
       // const res = await fetch(`http://localhost:666/controlPanel/manageClub`, {
         method: "PUT",
         body: JSON.stringify({

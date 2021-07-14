@@ -101,7 +101,8 @@ export default function Blog() {
   //  888          `88.    .8'   8       `888  `88b    ooo       888       888  `88b    d88'  8       `888  oo     .d8P
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchGetAllPosts = async () => {
-    const res = await fetch("https://ancient-reef-92615.herokuapp.com/blog", {
+    // const res = await fetch("https://ancient-reef-92615.herokuapp.com/blog", {
+    const res = await fetch("/api/blog", {
     // const res = await fetch("http://localhost:666/blog", {
       method: "GET",
       headers: {

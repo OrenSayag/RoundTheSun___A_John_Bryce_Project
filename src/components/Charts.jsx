@@ -63,7 +63,8 @@ export default function Charts() {
   // o888o           `YbodP'    o8o        `8   `Y8bood8P'      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchChartData = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/charts`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/controlPanel/charts`, {
+      const res = await fetch(`/api/controlPanel/charts`, {
       // const res = await fetch(`http://localhost:666/controlPanel/charts`, {
         method: "GET",
         headers: {
@@ -100,7 +101,8 @@ export default function Charts() {
   };
   const fetchVacations = async () => {
     try {
-      const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/explore`, {
+      const res = await fetch(`/api/explore`, {
       // const res = await fetch(`http://localhost:666/explore`, {
         method: "GET",
         headers: {

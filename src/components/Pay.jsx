@@ -210,7 +210,8 @@ export default function Pay() {
   //  888          `88.    .8'  `88b    ooo   8       `888       888       888  `88b    d88'  8       `888  oo     .d8P
   // o888o           `YbodP'     `Y8bood8P'  o8o        `8      o888o     o888o  `Y8bood8P'  o8o        `8  8""88888P'
   const fetchPayVacation = async () => {
-    const res = await fetch(`https://ancient-reef-92615.herokuapp.com/pay`, {
+    // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/pay`, {
+    const res = await fetch(`/api/pay`, {
     // const res = await fetch(`http://alocalhost:666/pay`, {
       method: "POST",
       body: JSON.stringify({
@@ -249,7 +250,8 @@ export default function Pay() {
 
   };
   const fetchPayClubProduct = async () => {
-    const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/pay`, {
+    // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/pay`, {
+    const res = await fetch(`/api/club/pay`, {
     // const res = await fetch(`http://localhost:666/club/pay`, {
       method: "POST",
       body: JSON.stringify({
@@ -283,7 +285,8 @@ export default function Pay() {
   const fetchGetProduct = async ()=> {
       const type = location.pathname.split('/')[2]
       if(type==='vacation'){
-          const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+          // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/vacation`, {
+          const res = await fetch(`/api/vacation`, {
           // const res = await fetch(`http://localhost:666/vacation`, {
             method: "POST",
             body: JSON.stringify({
@@ -301,7 +304,8 @@ export default function Pay() {
 
           setProduct(data.vacation)
       } else {
-        const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/prod/${id}`, {
+        // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/club/prod/${id}`, {
+        const res = await fetch(`/api/club/prod/${id}`, {
         // const res = await fetch(`http://localhost:666/club/prod/${id}`, {
             method: "GET",
             headers: {

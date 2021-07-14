@@ -3,7 +3,7 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const app = express()
 const cors = require('cors')
-const port = process.env.PORT || 666
+const port = 1000
 
 
 // oooooooooooo ooooo     ooo ooooo      ooo   .oooooo.   ooooooooooooo ooooo   .oooooo.   ooooo      ooo  .oooooo..o 

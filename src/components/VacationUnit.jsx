@@ -680,6 +680,7 @@ const [description, setDescription] = useState('')
   if(!userInfo.user_info || !vacation.comments){
     return <div>Loading!</div>
   }
+  console.log(vacation.comments)
   //   oooo  .oooooo..o ooooooo  ooooo
   //   `888 d8P'    `Y8  `8888    d8'
   //    888 Y88bo.         Y888..8P

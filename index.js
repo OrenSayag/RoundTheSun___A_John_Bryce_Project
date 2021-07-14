@@ -71,9 +71,9 @@ app.use(express.json())
         const userInfo = req.userInfo
         res.status(200).send({userInfo})
     })
-    
     //define static folder
     app.use("/", express.static(__dirname + "/build"))
+    
     // console.log(path.join(__dirname, 'build', 'index.html'))
     
     app.get("/*", (req, res)=>{

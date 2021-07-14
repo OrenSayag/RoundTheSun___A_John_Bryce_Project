@@ -57,6 +57,9 @@ app.use(express.json())
 // app.get('/', function (req, res) {
     //     res.send('Hello World')
     // })
+    //define static folder
+    app.use("/", express.static(__dirname + "/build"))
+    
     app.use('/api/auth', require('./routes/auth'))
     app.use('/api/profile', verifyUser ,require('./routes/profile'))
     app.use('/api/controlPanel', verifyAdmin, require('./routes/controlPanel'))
@@ -71,8 +74,6 @@ app.use(express.json())
         const userInfo = req.userInfo
         res.status(200).send({userInfo})
     })
-    //define static folder
-    app.use("/", express.static(__dirname + "/build"))
     
     // console.log(path.join(__dirname, 'build', 'index.html'))
     

@@ -19,7 +19,7 @@ const env = require('../env')
 // //   database: "orensayag_project3_initial",
 // });
 
-let con = mysql.createConnection({
+let con = mysql.createPool({
 //   host: 'us-cdbr-east-04.cleardb.com',
 //   user: 'bc8202b70b5cc9',
 //   password: '4bb08b17',
@@ -38,11 +38,11 @@ let con = mysql.createConnection({
 // user = bc8202b70b5cc9
 // password = 4bb08b17
 
-con.connect(function (err) {
+con.getConnection(function (err) {
   if (err) {
     console.error("error connecting: " + err);
 
-    // con = reconnect(con);
+    con = reconnect(con);
     
     return;
   }

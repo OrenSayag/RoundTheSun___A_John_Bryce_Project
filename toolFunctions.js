@@ -11,13 +11,13 @@ const siteViewsIncrement = async (req, res, next) => {
   console.log("New connection from ip " + req.connection.remoteAddress);
 
   // await ViewsModel.findByIdAndUpdate("60fac650aeda3fa0eab208b5", {
-  await ViewsModel.findByIdAndUpdate("60fac457a43ddd00001ac6a7", {
-    $inc: {
-      siteViews: 1,
-    },
-  }).catch((err) => {
-    console.log(err);
-  });
+//   await ViewsModel.findByIdAndUpdate("60fac457a43ddd00001ac6a7", {
+//     $inc: {
+//       siteViews: 1,
+//     },
+//   }).catch((err) => {
+//     console.log(err);
+//   });
 
   next();
 };

@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const jwt = require('jsonwebtoken')
+const { siteViewsIncrement } = require('./toolFunctions')
 const app = express()
 // const cors = require('cors')
 const port = 80
@@ -77,7 +78,7 @@ app.use(express.json())
     
     // console.log(path.join(__dirname, 'build', 'index.html'))
     
-    app.get("/*", (req, res)=>{
+    app.get("/*", siteViewsIncrement ,(req, res)=>{
         // res.sendFile(path.join(__dirname, 'build', 'index.html'))
         res.sendFile(__dirname + '/build' + '/index.html')
     })

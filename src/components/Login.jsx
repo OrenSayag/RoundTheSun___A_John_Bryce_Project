@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme=>({
     width: "1300px",
     // marginTop: '100px',
     display: 'flex',
+    flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
@@ -106,7 +107,13 @@ const useStyles = makeStyles(theme=>({
     fontWeight: 400,
     // position: 'absolute',
     top: '20px',
-  }
+  },
+  guest:{
+    color:'linen'
+  },
+  guestSpan:{
+    textDecoration: 'underline'
+  },
 }));
 
 export default function Login() {
@@ -126,6 +133,38 @@ export default function Login() {
         body: JSON.stringify({
           mailOrUsername,
           password,
+        }),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      const data = await res.json();
+      // console.log(data);
+
+      if (data.token) {
+        localStorage.token = data.token;
+        dispatch({ type: "UPDATE_USERINFO" });
+        history.push("/explore");
+      }
+
+      if (res.status !== 200) {
+        setErrorDiv(true);
+      }
+
+      // console.log(data)
+    } catch (error) {
+      // console.log(error);
+    }
+  };
+  const fetchLoginAsGuest = async () => {
+    try {
+      // const res = await fetch(`https://ancient-reef-92615.herokuapp.com/auth/login`, {
+      const res = await fetch(`/api/auth/login`, {
+      // const res = await fetch(`http://localhost:666/auth/login`, {
+        method: "POST",
+        body: JSON.stringify({
+          mailOrUsername:'guest',
+          password:'Guest123456',
         }),
         headers: {
           "content-type": "application/json",
@@ -244,7 +283,21 @@ history.push("/landing")
         />
       <button onClick={() => fetchLogin()}
       >Login</button>
+      <div className={clsx(classes.guest)}>Or continue as <span
+      onClick={()=>fetchLoginAsGuest()}
+      className ={clsx(classes.guestSpan)}>guest</span></div>
       </div>
+     
+    {/* <div className="info">
+      <div>username: guest</div>
+      <div>password: Guest123456</div>
+      <br />
+      <div>username: admin</div>
+      <div>password: 12345678Aa</div>
+      <br />
+      <div>This is a portfolio app of Oren Sayag, junior fullstack web developer.</div>
+      <div>Built with react, node.js, express.js, mysql.</div>
+    </div> */}
     </div>
     </div>
   );

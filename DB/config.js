@@ -42,7 +42,7 @@ con.getConnection(function (err) {
   if (err) {
     console.error("error connecting: " + err);
 
-    con = reconnect(con);
+    // con = reconnect(con);
     
     return;
   }
